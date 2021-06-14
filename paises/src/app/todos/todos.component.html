@@ -8,7 +8,7 @@
       <td class="c1">{{art.name}}</td>
       <td class="c2">{{art.capital}}</td>
       <td>
-        <button class="button"routerLink="/pais" ><span><img src="{{art.flag}}" alt=""></span></button> - 
+        <button class="button" [routerLink] ="['/pais/', art.alpha3Code ]" ><span><img src="{{art.flag}}" alt=""></span></button> - 
       </td>
     </tr>
   </table>
