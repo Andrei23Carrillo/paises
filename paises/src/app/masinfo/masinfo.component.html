@@ -1,19 +1,21 @@
 <div *ngIf="banderas!=null;">
     <!--la directiva *ngIf verificamos si la variable banderas tiene un null procedemos a mostrar el contenido de la etiqueta 'ng-template':-->
-    <div class="countryDetails">
-      <div class="leftSide">
+    <div>
+      <div>
         <img [src]="banderas.flag" [alt]="banderas.name">
       </div>
-      <div class="rightSide">
+      <div>
         <h1>{{ banderas.name }}</h1>
         <div class="rightSide__wrapper">
-          <p><strong>Native Name:</strong> {{ banderas.nativeName }}</p>
-          <p><strong>Population:</strong> {{ banderas.population }}</p>
-          <p><strong>Region:</strong> {{ banderas.region }}</p>
-          <p><strong>Sub Region:</strong> {{ banderas.nativeName }}</p>
+          <p><strong>Nombre Nativo:</strong> {{ banderas.nativeName }}</p>
+          <p><strong>Poblacion:</strong> {{ banderas.population }}</p>
+          <p><strong>Continente:</strong> {{ banderas.region }}</p>
+          <p><strong>SubRegion:</strong> {{ banderas.subregion }}</p>
           <p><strong>Capital:</strong> {{ banderas.capital }}</p>
-          <p><strong>Top Level Domain:</strong> {{ banderas.topLevelDomain[0] }}</p>
-          <p><strong>Currencies:</strong> {{ banderas.currencies[0].name }}</p>
+          <p><strong>Dominio:</strong> {{ banderas.topLevelDomain[0] }}</p>
+          <p><strong>Moneda:</strong> {{ banderas.currencies[0].name }}</p>
+          <p><strong>Codigo de Marcación:</strong> {{ banderas.callingCodes}}</p>
+          <p><strong>Gentilicio:</strong> {{ banderas.demonym}}</p>
         </div>
         <div>
           <button class="with-icon" type="button" [routerLink]="[ '/' ]">
