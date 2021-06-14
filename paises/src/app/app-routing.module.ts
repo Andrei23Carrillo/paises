@@ -32,10 +32,8 @@ const routes: Routes = [
     path:'oceania',
     component:OceaniaComponent
   },
-  {
-    path:'pais/:id',
-    component:MasinfoComponent
-  }
+  { path: "countries/:name", 
+  component: MasinfoComponent },
 ];
 
 @NgModule({

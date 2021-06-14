@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CountriesInterface } from './CountriesInterface';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,13 +11,6 @@ export class InfopaisService {
 
   constructor(private api: HttpClient) {}
 
-  getCountries() {
-    return this.api.get(`${this.vinculo}/all`);
-  }
-
-  getCountry(id) {
-    return this.api.get(`${this.vinculo}/alpha?codes=${id}`);
-  }
   getAfrica(){
     return this.api.get(`${this.vinculo}/region/africa`)
   }
@@ -32,4 +26,7 @@ export class InfopaisService {
   getOceania(){
     return this.api.get(`${this.vinculo}/region/oceania`)
   }
+  getCountries(){
+    return this.api.get(`${this.vinculo}/all`)
+  }  
 }

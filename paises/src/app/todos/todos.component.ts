@@ -6,19 +6,16 @@ import { InfopaisService } from '../infopais.service';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit{
-
-  title = 'todos';
-  banderas : any ;
-  vinculo = null;
-
-  constructor(public  infopais:InfopaisService) { }
-  ngOnInit() {
-
-    this.getCountries();
-  }
-  getCountries() {
-    this.infopais.getCountries().subscribe(res => {
-      this.banderas = res;
-    });
-  }
+  
+    title = 'Africa';
+    banderas : any ;
+  
+    constructor(public  infopais:InfopaisService) { }
+    ngOnInit() {
+      this.infopais.getCountries().subscribe(data =>{
+        this.banderas = data;
+      });
+    }
+  
 }
+  

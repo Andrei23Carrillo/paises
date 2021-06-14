@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import {HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
 import { AfricaComponent } from './africa/africa.component';
@@ -25,6 +26,7 @@ import { MasinfoComponent } from './masinfo/masinfo.component';
     MasinfoComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
