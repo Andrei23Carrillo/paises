@@ -1,27 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { InfopaisService } from '../infopais.service';
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit{
-  title = 'Todos los paises';
-  banderas = null;
 
-  constructor(private http: HttpClient) { }
+  title = 'todos';
+  banderas : any ;
+  vinculo = null;
 
+  constructor(public  infopais:InfopaisService) { }
   ngOnInit() {
-    this.http.get("https://restcountries.eu/rest/v2/all")
-      .subscribe(
-        result => {
-          this.banderas = result;
-        },
-        error => {
-          console.log('problemas');
-        }
-      );
-  }
 
+    this.getCountries();
+  }
+  getCountries() {
+    this.infopais.getCountries().subscribe(res => {
+      this.banderas = res;
+    });
+  }
 }

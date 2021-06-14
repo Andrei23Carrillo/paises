@@ -1,0 +1,19 @@
+<div class="contenedor">
+    <mat-card class="tarjeta" *ngIf="pais!=null">
+      <mat-card-header>
+        <div>
+          <mat-card-title>{{pais.name}}, {{pais.capital}}</mat-card-title>
+        </div>        
+        <div>
+          <mat-card-subtitle> Region : {{pais.region}}</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <img mat-card-image src="{{pais.flag}}">
+      <mat-card-content>
+        <p>Poblacion:{{pais.population}}</p>
+        <p>Area:{{pais.area}}</p>
+      </mat-card-content>
+        <mat-card-actions>
+        </mat-card-actions>
+    </mat-card>
+  </div>

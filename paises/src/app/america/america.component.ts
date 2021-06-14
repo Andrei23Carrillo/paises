@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { InfopaisService } from '../infopais.service';
 @Component({
   selector: 'app-america',
   templateUrl: './america.component.html',
@@ -9,20 +8,12 @@ import { HttpClient } from '@angular/common/http';
 export class AmericaComponent implements OnInit {
 
   title = 'Africa';
-  banderas = null;
+  banderas : any ;
 
-  constructor(private http: HttpClient) { }
-
+  constructor(public  infopais:InfopaisService) { }
   ngOnInit() {
-    this.http.get("https://restcountries.eu/rest/v2/region/americas")
-      .subscribe(
-        result => {
-          this.banderas = result;
-        },
-        error => {
-          console.log('problemas');
-        }
-      );
+    this.infopais.getAmerica().subscribe(data =>{
+      this.banderas = data;
+    });
   }
-
 }

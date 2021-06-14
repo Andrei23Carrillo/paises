@@ -11,6 +11,7 @@ import { AmericaComponent } from './america/america.component';
 import { AsiaComponent } from './asia/asia.component';
 import { EuropaComponent } from './europa/europa.component';
 import { OceaniaComponent } from './oceania/oceania.component';
+import { MasinfoComponent } from './masinfo/masinfo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OceaniaComponent } from './oceania/oceania.component';
     AmericaComponent,
     AsiaComponent,
     EuropaComponent,
-    OceaniaComponent
+    OceaniaComponent,
+    MasinfoComponent
   ],
   imports: [
     BrowserModule,

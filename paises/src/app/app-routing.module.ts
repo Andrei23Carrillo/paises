@@ -6,6 +6,7 @@ import { AmericaComponent } from './america/america.component';
 import { AsiaComponent } from './asia/asia.component';
 import { EuropaComponent } from './europa/europa.component';
 import { OceaniaComponent } from './oceania/oceania.component';
+import { MasinfoComponent } from './masinfo/masinfo.component';
 const routes: Routes = [
   {
     path:'todos',
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path:'oceania',
     component:OceaniaComponent
+  },
+  {
+    path:'pais/:id',
+    component:MasinfoComponent
   }
 ];
 

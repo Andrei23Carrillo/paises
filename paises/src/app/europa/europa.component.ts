@@ -1,26 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { InfopaisService } from '../infopais.service';
 @Component({
   selector: 'app-europa',
   templateUrl: './europa.component.html',
   styleUrls: ['./europa.component.css']
 })
 export class EuropaComponent implements OnInit {
+
   title = 'Africa';
-  banderas = null;
+  banderas : any ;
 
-  constructor(private http: HttpClient) { }
-
+  constructor(public  infopais:InfopaisService) { }
   ngOnInit() {
-    this.http.get("https://restcountries.eu/rest/v2/region/europe")
-      .subscribe(
-        result => {
-          this.banderas = result;
-        },
-        error => {
-          console.log('problemas');
-        }
-      );
+    this.infopais.getEuropa().subscribe(data =>{
+      this.banderas = data;
+    });
   }
-
 }
+
