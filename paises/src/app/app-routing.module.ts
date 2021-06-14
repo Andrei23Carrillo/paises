@@ -32,7 +32,7 @@ const routes: Routes = [
     path:'oceania',
     component:OceaniaComponent
   },
-  { path: "countries/:name", 
+  { path: "pais/:id", 
   component: MasinfoComponent },
 ];
 
